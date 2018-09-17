@@ -23,4 +23,5 @@ To start a local server, run `yarn start`.
 ## Start
 
 Go to 
-http://localhost:8000/#/settings to set your karbo address. Set Wallet URL  http://www.karbo.club/api and karbo address must be generate on  http://www.karbo.club/
+http://localhost:8000/#/settings to set your karbo address. 
+Set Wallet URL  https://www.karbo.club/api and karbo address must be generate on  https://www.karbo.club/
