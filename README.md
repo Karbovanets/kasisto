@@ -20,4 +20,7 @@ Clone, install dependencies and run `yarn` to install dependencies. (`npm instal
 To start a local server, run `yarn start`.
 
 
+## Start
 
+Go to 
+http://localhost:8000/#/settings to set your karbo address
