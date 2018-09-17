@@ -2,7 +2,7 @@
   "name": "kasisto",
   "private": true,
   "version": "0.1.0-alpha.2",
-  "description": "A Monero Point of Sale payment system",
+  "description": "A Karbo Point of Sale payment system",
   "repository": "https://github.com/amiuhle/kasisto",
   "keywords": [
     "monero",
