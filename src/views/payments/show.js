@@ -16,7 +16,7 @@ export default ({payment: {
         <tbody>
           <tr>
             <th scope='row'>Exchange Rate</th>
-            <td className='u-align-right'>{rate} {fiatCurrency}/XMR</td>
+            <td className='u-align-right'>{rate} {fiatCurrency}/KRB</td>
           </tr>
           <tr>
             <th scope='row'>Amount Requested</th>
@@ -58,7 +58,7 @@ export default ({payment: {
 export const formatCurrency = (amount, fiatCurrency = null, rate = 1) => {
   try {
     const decimals = fiatCurrency === null ? 12 : 2
-    return `${new Big(amount).times(rate).toFixed(decimals)} ${fiatCurrency || 'XMR'}`
+    return `${new Big(amount).times(rate).toFixed(decimals)} ${fiatCurrency || 'KRB'}`
   } catch (e) {
     return '—'
   }

@@ -11,7 +11,7 @@ import {
   takeEvery
 } from 'redux-saga/effects'
 
-import { requestPayment } from '../../lib/fetch-monero'
+import { requestPayment } from '../../lib/fetch-krb'
 import { fetchExchangeRate } from '../../lib/exchange-rates'
 
 import {
@@ -54,7 +54,8 @@ export function * processPayment (action) {
 
   const settings = yield select(getSettings)
 
-  const walletUrl = settings.walletUrl || 'https://stagenet.kasisto.io:28084/json_rpc'
+  const walletUrl = settings.walletUrl || "http://karbo.club/api";
+  const krbaddress = settings.krbaddress || "krbaddres";
   const fiatCurrency = settings.fiatCurrency || 'EUR'
   const merchantName = settings.name || 'Coffee shop'
   const pollingInterval = settings.pollingInterval || 2000
@@ -70,7 +71,7 @@ export function * processPayment (action) {
 
   const [rate, paymentRequest] = yield all([
     call(fetchExchangeRate, fiatCurrency),
-    call(requestPayment, walletUrl, username, password)
+    call(requestPayment, walletUrl, username, password, null, krbaddress)
   ])
 
   const {
@@ -110,6 +111,7 @@ export function * processPayment (action) {
   } finally {
     tipSaga.cancel()
   }
+
 }
 
 export function * watchCreatePayment () {

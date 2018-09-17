@@ -39,7 +39,7 @@ export default class SendPayment extends Component {
       tipIndex
     } = this.state
 
-    const isStagenet = address != null && !address.startsWith('4')
+    const isTestnet = address != null && !address.startsWith('4')
 
     if (receivedAmount != null && new Big(receivedAmount).gte(new Big(convertedAmount))) {
       return (
@@ -64,7 +64,7 @@ export default class SendPayment extends Component {
                 </tr>
               </tbody>
             </table>
-            <small>{new Big(receivedAmount).toFixed(12)} XMR</small>
+            <small>{new Big(receivedAmount).toFixed(12)} KRB</small>
           </div>
           <div className='o-app__top-left'>
             <Icon href='/' name='close' className='icon--white' />
@@ -81,7 +81,7 @@ export default class SendPayment extends Component {
 
             <ul className='o-list-inline c-tips'>
               {
-                [0.15, 0.18, 0.20].map((tipRate, key) =>
+                [0.10, 0.15, 0.20].map((tipRate, key) =>
                   <li
                     key={key}
                     onClick={(e) => {
@@ -117,7 +117,7 @@ export default class SendPayment extends Component {
                 </tr>
               </tbody>
             </table>
-            <small className='u-margin-bottom-large'>{new Big(convertedAmount).add(new Big(tip || '0')).toFixed(12)} XMR</small>
+            <small className='u-margin-bottom-large'>{new Big(convertedAmount).add(new Big(tip || '0')).toFixed(12)} KRB</small>
 
             <div className='o-flex o-flex--col'>
               <div className='o-flex o-flex--jc-center u-margin-bottom'>
@@ -129,7 +129,7 @@ export default class SendPayment extends Component {
 
           <CancelPayment onClick={cancelPayment} />
 
-          { isStagenet ? <small className='o-app__header u-brand-primary'>Stagenet</small> : null }
+          { isTestnet ? <small className='o-app__header u-brand-primary'>Testnet</small> : null }
         </Fragment>
       )
     }

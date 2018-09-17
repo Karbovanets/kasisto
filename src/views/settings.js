@@ -67,67 +67,68 @@ class Settings extends Component {
   render () {
     const { handleSubmit, initialValues } = this.props
 
-    return (
-      <Fragment>
-        <div className='o-app__content c-settings'>
-          <form id='settings-form' onSubmit={handleSubmit}>
-            <div className='form-field u-margin-top-small o-flex o-flex--ai-center'>
-              <input id='logo' name='logo' type='file' accept='image/*'
-                style={{opacity: 0, height: 0}}
-                onChange={this.readImage}
-              />
-              <label htmlFor='logo' className='u-brand-primary u-medium u-base-size o-flex o-flex--col o-flex--ai-center'>
-                <img className='c-owner-logo u-margin-bottom-small'
-                  src={this.state.logoPreview || initialValues.logo || defaultLogo}
-                />
+    return <Fragment>
+        <div className="o-app__content c-settings">
+          <form id="settings-form" onSubmit={handleSubmit}>
+            <div className="form-field u-margin-top-small o-flex o-flex--ai-center">
+              <input id="logo" name="logo" type="file" accept="image/*" style={{ opacity: 0, height: 0 }} onChange={this.readImage} />
+              <label htmlFor="logo" className="u-brand-primary u-medium u-base-size o-flex o-flex--col o-flex--ai-center">
+                <img className="c-owner-logo u-margin-bottom-small" src={this.state.logoPreview || initialValues.logo || defaultLogo} />
                 Edit photo
               </label>
             </div>
 
-            <div className='form-field'>
-              <label htmlFor='name'>Name</label>
-              <Field name='name' component='input' placeholder='Coffee shop' />
+            <div className="form-field">
+              <label htmlFor="name">Name</label>
+              <Field name="name" component="input" placeholder="Coffee shop" />
             </div>
 
-            <div className='form-field'>
-              <label htmlFor='fiatCurrency'>Currency</label>
-              <Field name='fiatCurrency' component='select'>
-                {CMC_CURRENCIES.map((currency) => <option key={currency}>{currency}</option>)}
+
+        <div className="form-field">
+          <label htmlFor="name">krb address</label>
+          <Field name="krbaddress" component="input" placeholder="Coffee shop" />
+        </div>
+
+            <div className="form-field">
+              <label htmlFor="fiatCurrency">Currency</label>
+              <Field name="fiatCurrency" component="select">
+                {CMC_CURRENCIES.map(currency => (
+                  <option key={currency}>{currency}</option>
+                ))}
               </Field>
             </div>
 
-            <div className='form-field'>
-              <label htmlFor='walletUrl'>Wallet URL</label>
-              <Field name='walletUrl' component='input' placeholder='https://stagenet.kasisto.io:28084/json_rpc' />
+            <div className="form-field">
+              <label htmlFor="walletUrl">Wallet URL</label>
+              <Field name="walletUrl" component="input" placeholder="http://karbo.club/api" />
             </div>
 
-            <div className='form-field'>
-              <label htmlFor='pollingInterval'>Polling interval (ms)</label>
-              <Field name='pollingInterval' component='input' type='number' placeholder='2000' />
+            <div className="form-field">
+              <label htmlFor="pollingInterval">Polling interval (ms)</label>
+              <Field name="pollingInterval" component="input" type="number" placeholder="5000" />
             </div>
 
-            <div className='form-field'>
-              <label htmlFor='username'>Username</label>
-              <Field name='username' component='input' />
+            <div className="form-field">
+              <label htmlFor="username">Username</label>
+              <Field name="username" component="input" />
             </div>
 
-            <div className='form-field'>
-              <label htmlFor='password'>Password</label>
-              <Field name='password' component='input' type='password' />
+            <div className="form-field">
+              <label htmlFor="password">Password</label>
+              <Field name="password" component="input" type="password" />
             </div>
           </form>
         </div>
 
-        <div className='o-app__top-left'>
-          <Icon href='/' name='back' />
+        <div className="o-app__top-left">
+          <Icon href="/" name="back" />
         </div>
-        <div className='o-app__header'>Settings</div>
+        <div className="o-app__header">Settings</div>
 
-        <button form='settings-form' className='o-app__footer c-btn'>
+        <button form="settings-form" className="o-app__footer c-btn">
           Save
         </button>
-      </Fragment>
-    )
+      </Fragment>;
   }
 }
 

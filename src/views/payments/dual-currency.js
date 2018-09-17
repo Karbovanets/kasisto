@@ -5,7 +5,7 @@ import Big from 'big.js'
 import FiatRate from '../../components/FiatRate'
 
 const zeros = (times) => new Array(Math.max(0, times)).fill('0').join('')
-const getCurrencyString = fiatCurrency => fiatCurrency || 'XMR'
+const getCurrencyString = fiatCurrency => fiatCurrency || 'KRB'
 const getMaxDecimals = currency => currency === null ? 12 : 2
 const getDivisor = currency => currency === null ? 1e12 : 1e2
 

@@ -60,14 +60,6 @@ class WebpackBaseConfig {
             ]
           },
           {
-            test: /icons\/.*\.svg$/,
-            loaders: [
-              'svg-sprite-loader',
-              'svg-fill-loader',
-              'svgo-loader'
-            ]
-          },
-          {
             test: /images\/.*\.(png|jpg|gif|mp4|ogg|svg|woff|woff2)$/,
             loader: 'file-loader'
           },
@@ -102,11 +94,26 @@ class WebpackBaseConfig {
             test: /\.json$/,
             loader: 'json-loader'
           },
+	{
+            test: /icons\/.*\.svg$/,
+            use: [
+    {
+      loader: "babel-loader"
+    },
+    {
+      loader: "react-svg-loader",
+      options: {
+        jsx: true // true outputs JSX tags
+      }
+    }
+  ]          
+	  },
           {
             test: /\.(js|jsx)$/,
             include: [].concat(this.includedPackages, [this.srcPathAbsolute]),
             loaders: [{ loader: 'babel-loader' }]
           },
+
           {
             test: /\.cssmodule\.(sass|scss)$/,
             loaders: [
