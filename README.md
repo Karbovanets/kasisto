@@ -48,3 +48,24 @@ In "History" you can see Payment Details
 
 ## Build
 `yarn run dist`
+
+## Config nginx
+...
+```
+ server {
+        listen       8000; 
+	
+        server_name  localhost;
+  
+	expires                 -1;
+
+	if_modified_since exact;
+        access_log  logs/host.access.log;
+         
+
+      location / {
+          root  G:/karbo/kasisto/dist/ ;
+      }
+    }
+```
+...
