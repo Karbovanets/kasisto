@@ -45,6 +45,7 @@ In "History" you can see Payment Details
 
 ![image](https://user-images.githubusercontent.com/3770296/45741301-e6eac400-bbff-11e8-9d16-594a46fa57bf.png)
 
+![default](https://user-images.githubusercontent.com/3770296/45756473-9be5a680-bc29-11e8-898c-10b527da4c5e.gif)
 
 ## Build
 `yarn run dist`
