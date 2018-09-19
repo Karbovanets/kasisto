@@ -24,8 +24,8 @@ To start a local server, run `yarn start`.
 
 Go to 
 http://localhost:8000/
-![image](https://user-images.githubusercontent.com/3770296/45736182-ded85780-bbf2-11e8-80c8-06bd8237cf8f.png)
 
+![image](https://user-images.githubusercontent.com/3770296/45736182-ded85780-bbf2-11e8-80c8-06bd8237cf8f.png)
 ![image](https://user-images.githubusercontent.com/3770296/45643999-23fe6b80-bac5-11e8-9c52-103f9312c27c.png)
 
 1) Set shop name
