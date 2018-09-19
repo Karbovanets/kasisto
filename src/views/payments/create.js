@@ -45,7 +45,7 @@ class CreatePayment extends Component {
       }
     } = this.props
 
-    const isTestnet = address != null && !address.startsWith('4')
+    const isTestnet = address != null && !address.startsWith('K')
 
     const isReady = this.isReady()
 

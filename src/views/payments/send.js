@@ -39,7 +39,7 @@ export default class SendPayment extends Component {
       tipIndex
     } = this.state
 
-    const isTestnet = address != null && !address.startsWith('4')
+    const isTestnet = address != null && !address.startsWith('K')
 
     if (receivedAmount != null && new Big(receivedAmount).gte(new Big(convertedAmount))) {
       return (
