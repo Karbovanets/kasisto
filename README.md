@@ -28,7 +28,7 @@ http://localhost:8000/
 
 ![image](https://user-images.githubusercontent.com/3770296/45736182-ded85780-bbf2-11e8-80c8-06bd8237cf8f.png)
 ![image](https://user-images.githubusercontent.com/3770296/45643999-23fe6b80-bac5-11e8-9c52-103f9312c27c.png)
-
+![b19](https://user-images.githubusercontent.com/3770296/46102086-2bfd9000-c1d6-11e8-9b81-8a1ea0e292f7.gif)
 1) Set shop name
 2) Set `Wallet URL` to https://www.karbo.club/api and karbo address must be generate on  https://www.karbo.club/
 3) Set shop logo
