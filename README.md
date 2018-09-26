@@ -19,9 +19,6 @@ Clone, install dependencies and run `yarn` to install dependencies. (`npm instal
 
 To start a local server, run `yarn start`.
 
-
-## Start
-
 ### Setup
 Go to 
 http://localhost:8000/
@@ -29,15 +26,19 @@ http://localhost:8000/
 ![image](https://user-images.githubusercontent.com/3770296/45736182-ded85780-bbf2-11e8-80c8-06bd8237cf8f.png)
 ![image](https://user-images.githubusercontent.com/3770296/45643999-23fe6b80-bac5-11e8-9c52-103f9312c27c.png)
 ![b19](https://user-images.githubusercontent.com/3770296/46102086-2bfd9000-c1d6-11e8-9b81-8a1ea0e292f7.gif)
+![2018-09-26_21-54-29](https://user-images.githubusercontent.com/3770296/46102532-38361d00-c1d7-11e8-88f7-a47cc7afb9f3.png)
 1) Set shop name
 2) Set `Wallet URL` to https://www.karbo.club/api and karbo address must be generate on  https://www.karbo.club/
 3) Set shop logo
+4) Choose your currency
 
 ### Create payment
 ![image](https://user-images.githubusercontent.com/3770296/45738466-2e218680-bbf9-11e8-8907-c85c55d57ae1.png)
 ![image](https://user-images.githubusercontent.com/3770296/45738635-b30ca000-bbf9-11e8-8fbf-bc2b56eb7170.png)
 
 ![default](https://user-images.githubusercontent.com/3770296/45756473-9be5a680-bc29-11e8-898c-10b527da4c5e.gif)
+
+![image](https://user-images.githubusercontent.com/3770296/46102478-09b84200-c1d7-11e8-8724-aff02e313491.png)
 
 wait for transaction confirmation
 
