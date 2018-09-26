@@ -3,6 +3,7 @@ export const REQUEST_PAYMENT = 'REQUEST_PAYMENT'
 
 // Merchant input
 export const SET_AMOUNT = 'SET_AMOUNT'
+export const SET_STATUS = "SET_STATUS";
 export const SET_RECEIPT = 'SET_RECEIPT'
 
 // Customer input

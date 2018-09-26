@@ -22,25 +22,9 @@ const CMC_CURRENCIES = [
   'GBP',
   'HKD',
   'HUF',
-  'IDR',
-  'ILS',
-  'INR',
-  'JPY',
-  'KRW',
-  'MXN',
-  'MYR',
-  'NOK',
-  'NZD',
-  'PHP',
-  'PKR',
-  'PLN',
   'RUB',
-  'SEK',
-  'SGD',
-  'THB',
-  'TRY',
-  'TWD',
   'USD',
+  'UAH',
   'ZAR'
 ]
 
@@ -80,14 +64,13 @@ class Settings extends Component {
 
             <div className="form-field">
               <label htmlFor="name">Name</label>
-              <Field name="name" component="input" placeholder="Coffee shop" />
+              <Field name="name" component="input" placeholder="shop name" />
             </div>
 
-
-        <div className="form-field">
-          <label htmlFor="name">krb address</label>
-          <Field name="krbaddress" component="input" placeholder="Coffee shop" />
-        </div>
+            <div className="form-field">
+              <label htmlFor="name">krb address</label>
+              <Field name="krbaddress" component="input" placeholder="krb address" />
+            </div>
 
             <div className="form-field">
               <label htmlFor="fiatCurrency">Currency</label>
@@ -107,7 +90,10 @@ class Settings extends Component {
               <label htmlFor="pollingInterval">Polling interval (ms)</label>
               <Field name="pollingInterval" component="input" type="number" placeholder="5000" />
             </div>
-
+            {/* <div className="form-field">
+              <label htmlFor="hasTip">hasTip</label>
+            <Field name="hasTip" component="input" />
+            </div> */}
             <div className="form-field">
               <label htmlFor="username">Username</label>
               <Field name="username" component="input" />

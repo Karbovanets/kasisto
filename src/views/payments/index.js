@@ -14,21 +14,33 @@ const {
   Blob,
   URL
 } = window
-
-const ListItem = ({id, receivedAmount, rate, fiatCurrency, updatedAt, paymentId}) => (
-  <li className='c-payments__item o-list-bare__item u-padding-vertical u-padding-horizontal-small'>
-    <Link to={`/payments/${id}`} className='o-flex o-flex--ai-center'>
-      <span className={`o-circle u-notice--${receivedAmount ? 'success' : 'error'}`} />
-      <span className='o-flex__stretch u-margin-horizontal o-flex o-flex--col o-flex--jc-center u-smaller'>
-        <span>{format(updatedAt, 'MM/DD/YYYY – HH:MM')}</span>
-        <span>{paymentId || '—'}</span>
+let printPI = (paymentId) =>{ 
+   console.log(paymentId);
+  return paymentId?paymentId.substr(0, 15) +" ... " +paymentId.substr(paymentId.length - 5, 5):''
+};
+const ListItem = ({
+  id,
+  receivedAmount,
+  rate,
+  fiatCurrency,
+  updatedAt,
+  paymentId
+}) => (
+  <li className="c-payments__item o-list-bare__item u-padding-vertical u-padding-horizontal-small">
+    <Link to={`/payments/${id}`} className="o-flex o-flex--ai-center">
+      <span
+        className={`o-circle u-notice--${receivedAmount ? "success" : "error"}`}
+      />
+      <span className="o-flex__stretch u-margin-horizontal o-flex o-flex--col o-flex--jc-center u-smaller">
+        <span>{format(updatedAt, "MM/DD/YYYY – HH:MM")}</span>
+          <span>{printPI(paymentId)|| "—"}</span>
       </span>
-      <span className='u-medium'>
+      <span className="u-medium">
         {formatCurrency(receivedAmount, fiatCurrency, rate)}
       </span>
     </Link>
   </li>
-)
+);
 
 const download = (json) => {
   const blob = new Blob([JSON.stringify(json, null, 2)], { type: 'application/json' })

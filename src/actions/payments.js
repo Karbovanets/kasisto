@@ -15,7 +15,12 @@ export const setAmount = (requestedAmount, receipt = null) => ({
     receipt
   }
 })
-
+export const setStatus = (status) => ({
+  type: types.SET_AMOUNT,
+  payload: {
+    status
+  }
+})
 export const setTip = (tip) => {
   tip = Math.max(0, Number.parseFloat(tip) || 0)
   return {
@@ -35,7 +40,8 @@ export const createPayment = (id, payment, timestamp = () => new Date().toISOStr
   payload: Object.assign({}, payment, { id },
     {
       createdAt: timestamp(),
-      updatedAt: timestamp()
+      updatedAt: timestamp(),
+      status: "-"
     }
   )
 })

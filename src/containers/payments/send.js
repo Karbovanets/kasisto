@@ -7,8 +7,9 @@ import {
   fetchUri,
   listenForPayments,
   cancelPayment,
-  setTip
-} from '../../actions'
+  setTip,
+  setStatus
+} from "../../actions";
 
 import {
   getPaymentById,
@@ -53,12 +54,16 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  ...bindActionCreators({
-    fetchUri,
-    listenForPayments,
-    cancelPayment,
-    setTip
-  }, dispatch)
-})
+  ...bindActionCreators(
+    {
+      fetchUri,
+      listenForPayments,
+      cancelPayment,
+      setTip,
+      setStatus
+    },
+    dispatch
+  )
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Container)

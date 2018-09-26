@@ -46,6 +46,12 @@ function * awaitPayment (paymentRequest, pollingInterval) {
   cancelSaga.cancel()
   return onFulfilled
 }
+function* awaitUnconfirmPayment(paymentRequest, pollingInterval) {
+  const cancelSaga = yield fork(listenForCancel)
+  const onUnconfirmedTransaction = yield call([paymentRequest,'onUnconfirmedTransaction'], pollingInterval)
+  cancelSaga.cancel()
+  return onUnconfirmedTransaction;
+}
 
 export function * processPayment (action) {
   const {
@@ -102,16 +108,26 @@ export function * processPayment (action) {
   const tipSaga = yield fork(listenForTip, id, paymentRequest, merchantName, receipt)
 
   try {
+    const onUnconfirmedTransaction = yield call(awaitUnconfirmPayment, paymentRequest, pollingInterval)
+
+    yield put(updatePayment(id, {status: onUnconfirmedTransaction.status}))
+  } catch (e) {
+    console.warn('Error', e)
+    //paymentRequest.cancel()
+  } finally {
+    console.log("finally");
+    //tipSaga.cancel()
+  }
+  try {
     const onFulfilled = yield call(awaitPayment, paymentRequest, pollingInterval)
 
-    yield put(updatePayment(id, { receivedAmount: new Big(onFulfilled.amountReceived).div(1e12).toFixed(12) }))
+    yield put(updatePayment(id, { status: onFulfilled.status , receivedAmount: new Big(onFulfilled.amountReceived).div(1e12).toFixed(12) }))
   } catch (e) {
     console.warn('Error', e)
     paymentRequest.cancel()
   } finally {
     tipSaga.cancel()
   }
-
 }
 
 export function * watchCreatePayment () {

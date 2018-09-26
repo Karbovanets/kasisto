@@ -5,6 +5,7 @@ import "../icons/history.svg";
 import "../icons/loading.svg";
 import "../icons/monero.svg";
 import "../icons/settings.svg";
+
 import React from 'react'
 import { Link } from 'react-router-dom'
 
