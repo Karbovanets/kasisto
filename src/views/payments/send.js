@@ -187,7 +187,14 @@ export default class SendPayment extends Component {
 
             <div className="o-flex o-flex--col">
               <div className="o-flex o-flex--jc-center u-margin-bottom">
-                <PaymentRequest integratedAddress={integratedAddress} uri={uri} />
+                {isTestnet ? (
+                  <h2 className="o-app__header u-brand-primary"> set KRB address in settings</h2>
+                ) : (
+                  <PaymentRequest
+                    integratedAddress={integratedAddress}
+                    uri={uri}
+                  />
+                )}
               </div>
             </div>
             <FiatRate className="u-align-center" rate={rate} exchange={exchange} fiatCurrency={fiatCurrency} />
@@ -195,9 +202,9 @@ export default class SendPayment extends Component {
 
           <CancelPayment onClick={cancelPayment} />
 
-          {isTestnet ? <small className="o-app__header u-brand-primary">
+          {isTestnet ? <h2 className="o-app__header u-brand-primary">
               Testnet
-            </small> : null}
+            </h2> : null}
         </Fragment>;
     }
   }

@@ -65,7 +65,7 @@ class CreatePayment extends Component {
         <button form='request-payment' className='o-app__footer c-btn' disabled={!isReady}>
           { this.hasConnection() ? 'Request payment' : 'Waiting for wallet...' }
         </button>
-        { isTestnet ? <small className='o-app__header u-brand-primary'>Testnet</small> : null }
+        {isTestnet ? <h2 className="o-app__header u-brand-primary">Testnet</h2> : null }
       </Fragment>
     )
   }
